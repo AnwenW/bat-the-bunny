@@ -31,9 +31,27 @@ function randomHole(holes) {
   return hole;
 }
 
+//// Pick a random bunny to pop out of the hole ////
+
+function bunnyPicker() {
+  const bunny1 = "url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny1.png')";
+  const bunny2 = "url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny2.png')";
+  const bunny3 = "url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny3.png')";
+  const bunnyArray = [bunny1, bunny2, bunny3];
+
+  const randomBunny = Math.floor(Math.random() * bunnyArray.length);
+
+  console.log(randomBunny);
+
+  for (let i = 0; i < bunnys.length; i++) {
+    bunnys[i].style.backgroundImage = bunnyArray[randomBunny];
+  }
+}
+
 //// Get bunnies to pop up from holes at random time intervals, adding class setting CSS top:0, and removing class after timeout ////
 
 function peep() {
+  bunnyPicker();
   const time = randomTime(300, 1000);
   const hole = randomHole(holes);
   hole.classList.add('up');
