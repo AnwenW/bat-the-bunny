@@ -133,3 +133,82 @@ footer {
   height: 150px;
   background-color: #99d965;
 }
+
+@media screen and (max-width: 610px) {
+  .bunnytitle {
+    height: 11vw;
+  }
+  .intro {
+    margin: 30px auto 5px;
+  }
+  h1 {
+    font-size: 9vw;
+    padding-left: 3vw;
+  }
+  .smalltext {
+    font-size: 7vw;
+  }
+  .bunnyhead {
+    width: 8.3vw;
+  }
+  .score {
+    margin-left: 3vw;
+    border-radius: 3vw;
+    width: 12.5vw;
+    font-size: 8vw;
+  }
+  .game {
+    width: 350px;
+    height: 400px;
+  }
+  .hole {
+    flex: 1 0 50%;
+  }
+  .hole:after {
+    width: 90%;
+  }
+  .bunny {
+    background-size: 33%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .intro {
+    margin: 20px auto 5px;
+  }
+  .game {
+    height: 350px;
+    width: auto;
+  }
+  .bunny {
+    background-size: 25%;
+  }
+  .hole {
+    flex: 1 0 50%;
+  }
+  .hole:after {
+    width: 73%;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .game {
+    height: 330px;
+    width: auto;
+  }
+  .bunny {
+    background-size: 26%;
+  }
+  .hole:after {
+    width: 65%;
+    margin-left: 22px;
+  }
+
+}
+
+@media screen and (max-width: 340px) {
+  .bunny {
+    background-size: 29%;
+  }
+}
