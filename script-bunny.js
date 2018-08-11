@@ -2,6 +2,8 @@ const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const bunnys = document.querySelectorAll('.bunny');
 
+let lastHole;
+
 // function to give random amount of time (rounded) between min and max
 
 function randomTime (min, max) {
@@ -15,4 +17,12 @@ function randomHole(holes) {
   const index = Math.floor(Math.random() * holes.length);
   const hole = holes[index];
   // console.log(hole); // now need to prevent the same hole twice in a row!
+
+  if (hole === lastHole) {
+    // console.log('Same hole!');
+    return randomHole(holes);
+  }
+
+  lastHole = hole;
+  return hole;
 }
