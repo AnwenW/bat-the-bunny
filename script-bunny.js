@@ -4,6 +4,7 @@ const bunnys = document.querySelectorAll('.bunny');
 
 let lastHole;
 let timeUp = false;
+let score = 0;
 
 //// Function to give random amount of time (rounded) between min and max ////
 
@@ -44,6 +45,17 @@ function peep() {
 function startGame() {
   scoreBoard.textContent = 0;
   timeUp = false; // set on page load, but reset here in case new game
+  score = 0;
   peep();
   setTimeout(() => timeUp = true, 10000)
 }
+
+function bat(e) {
+  // Check that click event is genuine (true), not simulated in JavaScript
+  if(!e.isTrusted) return; // cheater
+  score++;
+  this.classList.remove('up');
+  scoreBoard.textContent = score;
+}
+
+bunnys.forEach(bunny => bunny.addEventListener('click', bat));
