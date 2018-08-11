@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #99d965;
+  padding: 0;
+  margin: 0;
+  font-family: 'Love Ya Like A Sister', sans-serif;
+}
+
+.bunnytitle {
+  height: 8vw;
+  margin-top: 10px;
+  text-align: center;
+}
+
+h1 {
+  display: inline-block;
+  text-align: center;
+  font-size: 6vw;
+  padding-left: 2vw;
+  margin: 0;
+}
+
+.score {
+  display: inline-block;
+  margin-left: 2vw;
+  background: rgba(255,255,255,0.6);
+  border-radius: 2vw;
+  width: 9.5vw;
+  text-align: center;
+  font-size: 6vw;
+  font-weight: bold;
+}
