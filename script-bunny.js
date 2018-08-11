@@ -3,6 +3,7 @@ const scoreBoard = document.querySelector('.score');
 const bunnys = document.querySelectorAll('.bunny');
 
 let lastHole;
+let timeUp = false;
 
 //// Function to give random amount of time (rounded) between min and max ////
 
@@ -30,10 +31,19 @@ function randomHole(holes) {
 //// Get bunnies to pop up from holes at random time intervals, adding class setting CSS top:0, and removing class after timeout ////
 
 function peep() {
-  const time = randomTime(350, 1000);
+  const time = randomTime(300, 1000);
   const hole = randomHole(holes);
   hole.classList.add('up');
   setTimeout(() => {
     hole.classList.remove('up');
+    // then run peep(); again, but need a timeout or will run indefinitely:
+    if (!timeUp) peep();
   }, time);
+}
+
+function startGame() {
+  scoreBoard.textContent = 0;
+  timeUp = false; // set on page load, but reset here in case new game
+  peep();
+  setTimeout(() => timeUp = true, 10000)
 }
