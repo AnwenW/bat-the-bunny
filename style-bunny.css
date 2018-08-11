@@ -19,12 +19,24 @@ body {
   text-align: center;
 }
 
+.bunnyhead {
+  display: inline-block;
+  vertical-align: bottom;
+  transform: rotate(-5deg);
+  width: 5vw;
+}
+
 h1 {
   display: inline-block;
   text-align: center;
   font-size: 6vw;
   padding-left: 2vw;
   margin: 0;
+}
+
+.smalltext {
+  vertical-align: middle;
+  font-size: 4vw;
 }
 
 .score {
