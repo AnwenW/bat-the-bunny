@@ -4,6 +4,7 @@ const bunnys = document.querySelectorAll('.bunny');
 const countdownNum = document.querySelector('#countdown');
 
 let lastHole;
+let lastBunny;
 let timeUp = false;
 let score = 0;
 let timeleft = 10;
@@ -34,25 +35,38 @@ function randomHole(holes) {
 //// Pick a random bunny to pop out of the hole ////
 
 function bunnyPicker() {
+
   const bunny1 = "url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny1.png')";
   const bunny2 = "url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny2.png')";
   const bunny3 = "url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny3.png')";
+
   const bunnyArray = [bunny1, bunny2, bunny3];
 
-  const randomBunny = Math.floor(Math.random() * bunnyArray.length);
+  const bunnyIndex = Math.floor(Math.random() * bunnyArray.length);
 
-  console.log(randomBunny);
+  console.log(bunnyIndex);
 
   for (let i = 0; i < bunnys.length; i++) {
-    bunnys[i].style.backgroundImage = bunnyArray[randomBunny];
+
+    if (bunnyIndex === lastBunny) {
+      console.log('Same bunny!');
+      return bunnyPicker();
+    }
+
+    bunnys[i].style.backgroundImage = bunnyArray[bunnyIndex];
+
   }
+
+  lastBunny = bunnyIndex;
+  return bunnyIndex;
+
 }
 
 //// Get bunnies to pop up from holes at random time intervals, adding class setting CSS top:0, and removing class after timeout ////
 
 function peep() {
   bunnyPicker();
-  const time = randomTime(300, 1000);
+  const time = randomTime(360, 980);
   const hole = randomHole(holes);
   hole.classList.add('up');
   setTimeout(() => {
