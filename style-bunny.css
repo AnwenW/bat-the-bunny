@@ -55,3 +55,17 @@ button {
   font-size: 22px;
   letter-spacing: 1.5px;
 }
+
+.game {
+  width: 600px;
+  height: 360px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto 20px;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+}
