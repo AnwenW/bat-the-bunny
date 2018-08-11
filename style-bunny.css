@@ -69,3 +69,15 @@ button {
   overflow: hidden;
   position: relative;
 }
+
+.hole:after {
+  display: block;
+  background: url(https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/grass1.png) bottom center no-repeat;
+  background-size: contain;
+  content:'';
+  width: 93%;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+}
