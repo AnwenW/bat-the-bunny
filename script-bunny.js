@@ -1,10 +1,12 @@
 const holes = document.querySelectorAll('.hole');
 const scoreBoard = document.querySelector('.score');
 const bunnys = document.querySelectorAll('.bunny');
+const countdownNum = document.querySelector('#countdown');
 
 let lastHole;
 let timeUp = false;
 let score = 0;
+let timeleft = 10;
 
 //// Function to give random amount of time (rounded) between min and max ////
 
@@ -44,10 +46,27 @@ function peep() {
 
 function startGame() {
   scoreBoard.textContent = 0;
+  timeleft = 10;
   timeUp = false; // set on page load, but reset here in case new game
   score = 0;
   peep();
-  setTimeout(() => timeUp = true, 10000)
+  setTimeout(() => timeUp = true, 10000);
+  countdownTimer();
+}
+
+function countdownTimer() {
+
+  var timer = setInterval(function() {
+      timeleft--;
+      countdownNum.textContent = timeleft;
+      if (timeleft <= 0)
+        clearInterval(timer);
+  }, 1000); // time 1s between numbers counting down
+
+  setTimeout(() => {
+      countdownNum.textContent = '10';
+  }, 12000) // time until timer resets to 10s
+
 }
 
 function bat(e) {
