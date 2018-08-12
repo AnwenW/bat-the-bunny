@@ -116,7 +116,9 @@ button {
 }
 
 .bunny {
-  background: url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny1.png') bottom center no-repeat;
+  background-image: url('https://raw.githubusercontent.com/AnwenW/bat-the-bunny/master/bunny1.png');
+  background-position: bottom center;
+  background-repeat: no-repeat;
   background-size: 40%;
   position: absolute;
   top: 100%;
